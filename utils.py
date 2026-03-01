@@ -1,4 +1,3 @@
-
 import os
 
 def is_valid_markdown_file(file_path: str) -> bool:
@@ -11,10 +10,14 @@ def is_valid_markdown_file(file_path: str) -> bool:
     Returns:
         bool: True if the file path is a valid markdown file, False otherwise.
     """
-    if not os.path.exists(file_path):
+    try:
+        if not os.path.exists(file_path):
+            return False
+        if not os.path.isfile(file_path):
+            return False
+        if not file_path.endswith('.md'):
+            return False
+        return True
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return False
-    if not os.path.isfile(file_path):
-        return False
-    if not file_path.endswith('.md'):
-        return False
-    return True
