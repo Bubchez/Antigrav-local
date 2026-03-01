@@ -1,26 +1,12 @@
-# Project README
+# Zotac AI Calculator Project
 
 ## Overview
-This project is designed to scan a directory and list all markdown files within it. It includes a utility function to validate markdown file paths.
+A modular Python calculator application designed to test the Antigravity Orchestrator's autonomous coding, testing, and RAG capabilities.
 
-## Features
-- Scans a directory for markdown files.
-- Validates if a given file path is a valid markdown file.
+## Architecture
+- `operations.py`: Contains the raw mathematical logic (addition, subtraction, etc.).
+- `calculator.py`: The main entry point that handles user input and calls the operations.
+- `test_*.py`: Every logic file must have a matching Pytest file to ensure mathematical accuracy.
 
-## Installation
-1. Clone the repository:
-   git clone https://github.com/yourusername/markdown-scanner.git
-2. Navigate to the project directory:
-   cd markdown-scanner
-3. Install the required dependencies:
-   pip install -r requirements.txt
-
-## Usage
-1. Run the script:
-   python app.py /path/to/directory
-
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request.
-
-## License
-This project is licensed under the MIT License.
+## Current Status
+The basic addition and subtraction features are implemented. Multiplication and division are missing and need to be built.
