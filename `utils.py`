@@ -1,0 +1,39 @@
+
+def safe_divide(a: float, b: float) -> float:
+    """
+    Safely divides two numbers, handling division by zero.
+
+    Args:
+        a (float): The numerator.
+        b (float): The denominator.
+
+    Returns:
+        float: The result of the division if successful.
+
+    Raises:
+        ValueError: If the denominator is zero.
+    """
+    try:
+        return a / b
+    except ZeroDivisionError:
+        raise ValueError("Denominator cannot be zero")
+
+def safe_sqrt(x: float) -> float:
+    """
+    Safely calculates the square root of a number, handling negative inputs.
+
+    Args:
+        x (float): The number to calculate the square root of.
+
+    Returns:
+        float: The square root of the number if successful.
+
+    Raises:
+        ValueError: If the input is negative.
+    """
+    if x < 0:
+        raise ValueError("Cannot take the square root of a negative number")
+    return x ** 0.5
+
+
+This updated version of `utils.py` includes try-except blocks to handle potential errors in the `safe_divide` and `safe_sqrt` functions. It also raises meaningful exceptions with descriptive error messages, improving the robustness and usability of the functions.
