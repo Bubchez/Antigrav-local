@@ -1,0 +1,25 @@
+import os
+from utils import is_valid_markdown_file
+
+def find_markdown_files(directory: str) -> list:
+    """
+    Scans a given directory and returns a list of markdown files.
+
+    Args:
+        directory (str): The directory to scan for markdown files.
+
+    Returns:
+        list: A list of markdown file paths.
+    """
+    markdown_files = []
+    try:
+        for root, _, files in os.walk(directory):
+            for file in files:
+                file_path = os.path.join(root, file)
+                if file.endswith('.md') and is_valid_markdown_file(file_path):
+                    markdown_files.append(file_path)
+    except PermissionError:
+        print(f"Permission denied to access {directory}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return markdown_files
