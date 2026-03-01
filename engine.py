@@ -1,4 +1,3 @@
-
 import os
 
 def find_markdown_files(directory: str) -> list:
@@ -11,9 +10,5 @@ def find_markdown_files(directory: str) -> list:
     Returns:
         list: A list of markdown file paths.
     """
-    markdown_files = []
-    for root, _, files in os.walk(directory):
-        for file in files:
-            if file.endswith('.md'):
-                markdown_files.append(os.path.join(root, file))
+    markdown_files = [os.path.join(root, file) for root, _, files in os.walk(directory) for file in files if file.endswith('.md')]
     return markdown_files
